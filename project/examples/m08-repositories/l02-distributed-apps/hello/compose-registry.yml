@@ -1,0 +1,25 @@
+# Hello-App aus der eigenen Registry (Lab 8.2): image: statt build:, kein Quellcode nötig
+# Voraussetzung: Registry aus Lab 8.1 läuft auf 127.0.0.1:5001 und enthält frontend:2.0.0 und backend:1.0.0
+# Start im Ordner hello:  docker compose -f compose-registry.yml up -d
+services:
+  frontend:
+    image: 127.0.0.1:5001/frontend:2.0.0   # feste Version aus der Registry, kein build:
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - 8080:80
+    volumes:
+      - hello-data:/data
+
+  backend:
+    image: 127.0.0.1:5001/backend:1.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s
+
+volumes:
+  hello-data:

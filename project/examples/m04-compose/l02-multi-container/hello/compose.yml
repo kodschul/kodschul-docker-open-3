@@ -1,0 +1,29 @@
+# Hello-App mit 10 Frontends; jeder Container bekommt einen zufälligen freien Rechner-Port
+services:
+  frontend:
+    image: frontend:v2
+    build:
+      context: frontend
+      args:
+        - APP_VERSION=2.0.0
+    depends_on:
+      backend:
+        condition: service_healthy
+    deploy:
+      replicas: 10
+    ports:
+      - ":80"                               # nur Container-Port: Docker wählt den Rechner-Port
+    develop:
+      watch:
+        - path: ./frontend/frontend.py
+          action: rebuild
+
+  backend:
+    image: backend:v1
+    build: backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s

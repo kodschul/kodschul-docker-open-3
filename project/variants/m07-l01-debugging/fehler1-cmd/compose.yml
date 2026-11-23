@@ -1,0 +1,16 @@
+# Fehlerbild 1 (Lab 7.1): Hello-App auf Port 8701
+# Start im Ordner fehler1-cmd:  docker compose up -d --build
+services:
+  frontend:
+    image: fehler1-frontend:1.0
+    build:
+      context: frontend
+      args:
+        - APP_VERSION=1.0.0
+    ports:
+      - 8701:80
+    depends_on:
+      - backend
+
+  backend:
+    image: backend:v1                       # Image aus Lab 3.2

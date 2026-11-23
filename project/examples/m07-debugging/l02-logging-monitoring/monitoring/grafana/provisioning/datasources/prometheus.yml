@@ -1,0 +1,9 @@
+# Grafana legt diese Datenquelle beim Start an (kein Klickpfad nötig)
+apiVersion: 1
+datasources:
+  - name: Prometheus
+    uid: prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090         # Dienstname aus compose.yml
+    isDefault: true

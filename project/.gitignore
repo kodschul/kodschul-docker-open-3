@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Node
+node_modules/
+# Geheimnisse und lokale Einstellungen
+.env.local
+# Sicherungen und exportierte Images
+*.tar
+*.tar.gz
+# Betriebssystem und Editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,17 @@
+# Fehlerbild 4 (Lab 7.1): Hello-App auf Port 8704
+# Start im Ordner fehler4-speicher:  docker compose up -d
+services:
+  frontend:
+    image: frontend:v2                      # Image aus Lab 3.2
+    ports:
+      - 8704:80
+    depends_on:
+      - backend
+
+  backend:
+    image: backend:v1                       # Image aus Lab 3.2
+    deploy:
+      resources:
+        limits:
+          memory: 8M                        # Speichergrenze des Containers (Lab 6.2)
+          cpus: "0.5"

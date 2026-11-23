@@ -1,0 +1,18 @@
+# Hello-App (Lab 4.1, Aufgabe 4)
+# Werte aus .env (Platzhalter ${...}) und aus app-config.env (env_file)
+services:
+  frontend:
+    image: frontend:v1
+    build:
+      context: ./frontend
+      args:
+        - APP_VERSION=1.0.0                 # TODO 1: Wert aus .env einsetzen (FE_VERSION)
+    ports:
+      - 8080:80                             # TODO 2: Rechner-Port aus .env einsetzen (FE_PORT)
+    # TODO 3: Laufzeit-Variablen aus der Datei app-config.env laden (env_file)
+
+  backend:
+    image: backend:v1
+    build: backend
+    # TODO 4: dieselbe Datei app-config.env laden (env_file)
+    # TODO 5: Anzahl der Backend-Container aus .env (BE_REPLICAS) unter deploy.replicas

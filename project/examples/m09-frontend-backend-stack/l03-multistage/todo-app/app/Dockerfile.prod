@@ -1,0 +1,30 @@
+# Multistage-Dockerfile für die Todo-App (Lab 9.3)
+# Bauen im Ordner playground/todo-app:  docker build -f app/Dockerfile.prod -t todo-app:prod app
+
+# Stufe 1 "base": gemeinsame Grundlage, nur die Paketlisten
+FROM node:24-alpine AS base
+WORKDIR /usr/src/app
+COPY package*.json .npmrc ./
+
+# Stufe 2 "builder": alle Pakete inklusive Entwicklungswerkzeuge, dazu der Code
+# (hier liefen Tests oder ein Build-Schritt; diese App braucht keinen)
+FROM base AS builder
+RUN npm ci
+COPY . .
+
+# Stufe 3 "production": frisches, schlankes Image; nur was zur Laufzeit nötig ist
+FROM node:24-alpine AS production
+ENV NODE_ENV=production
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app/package*.json /usr/src/app/.npmrc ./
+# nur Laufzeitpakete (ohne devDependencies wie nodemon), danach den npm-Cache löschen
+RUN npm ci --omit=dev && npm cache clean --force
+COPY --from=builder /usr/src/app/server.js ./
+COPY --from=builder /usr/src/app/config ./config
+COPY --from=builder /usr/src/app/models ./models
+COPY --from=builder /usr/src/app/routes ./routes
+COPY --from=builder /usr/src/app/views ./views
+# ohne root-Rechte ausführen (Benutzer node ist im Node-Image angelegt)
+USER node
+EXPOSE 3000
+CMD ["npm", "start"]

@@ -1,0 +1,3 @@
+Notizen zum Frontend (gehören nicht ins Image)
+- Farbe über APP_COLOR einstellbar
+- Version kommt aus dem Build-Argument APP_VERSION

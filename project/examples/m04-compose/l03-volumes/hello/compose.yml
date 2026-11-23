@@ -1,0 +1,32 @@
+# Hello-App, Stand ab Lab 4.3: ein Frontend auf Port 8080, access.log im Volume hello-data
+services:
+  frontend:
+    image: frontend:v2
+    build:
+      context: frontend
+      args:
+        - APP_VERSION=2.0.0
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - 8080:80
+    volumes:
+      - hello-data:/data                    # Named Volume: access.log überlebt Container
+    develop:
+      watch:
+        - path: ./frontend/frontend.py
+          action: rebuild
+
+  backend:
+    image: backend:v1
+    build: backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s
+
+volumes:
+  hello-data:                               # von Docker verwaltet; docker compose down -v löscht es

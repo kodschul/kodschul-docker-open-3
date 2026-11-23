@@ -1,0 +1,9 @@
+# Hello-App (Lab 4.1, Aufgabe 2)
+# Kleinste Compose-Datei der Hello-App: beide Images aus den Dockerfiles bauen
+services:
+  frontend:
+    # TODO 1: Image aus dem Ordner frontend bauen (build)
+    # TODO 2: Rechner-Port 8080 auf Container-Port 80 (ports)
+
+  backend:
+    # TODO 3: Image aus dem Ordner backend bauen (build); kein Port nach außen

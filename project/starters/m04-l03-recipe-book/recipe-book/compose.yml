@@ -1,0 +1,12 @@
+# Rezeptbuch (Lab 4.3, Aufgabe 2): App (eigenes Image) und Datenbank (MongoDB) mit Named Volume
+services:
+  recipe-app:
+    # TODO 1: Image aus dem Ordner ./app bauen (build)
+    # TODO 2: Rechner-Port 3000 auf Container-Port 3000 (ports)
+    # TODO 3: Dienst recipe-database zuerst starten (depends_on)
+
+  recipe-database:
+    # TODO 4: Image mongo:8
+    # TODO 5: Named Volume recipe-data unter /data/db einbinden (volumes)
+
+# TODO 6: Volume recipe-data auf oberster Ebene anlegen (volumes:)

@@ -1,0 +1,27 @@
+# Time-App (Lab 9.2): Traefik, Frontend (nginx), Backend (Flask) und Redis
+# Start im Ordner playground/time-app:  docker compose up -d --build
+services:
+  frontend:
+    build: ./frontend
+    labels:
+      - traefik.enable=true
+      # TODO 1: Router "frontend" mit der Regel Host(`localhost`) && PathPrefix(`/`) und dem Eingang web
+
+  backend:
+    build: ./backend
+    depends_on:
+      - redis
+    # TODO 2: Labels wie beim Frontend, Router "backend", Regel Host(`localhost`) && PathPrefix(`/api`)
+
+  redis:
+    image: redis:8-alpine
+
+  traefik:
+    image: traefik:v3.8
+    command:
+      - --log.level=DEBUG
+      - --api.insecure=true
+      - --providers.docker=true
+      - --providers.docker.exposedByDefault=false
+      - --entryPoints.web.address=:80
+    # TODO 3: Ports 80 und 8080 veröffentlichen, Docker-Socket nur lesend einbinden

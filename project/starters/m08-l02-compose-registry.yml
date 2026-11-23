@@ -1,0 +1,23 @@
+# Hello-App aus der eigenen Registry (Lab 8.2) – nach playground/hello/compose-registry.yml kopieren, TODOs ergänzen
+services:
+  frontend:
+    image: TODO                            # TODO 1: Frontend 2.0.0 aus der Registry 127.0.0.1:5001
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - 8080:80
+    volumes:
+      - hello-data:/data
+
+  backend:
+    image: TODO                            # TODO 2: Backend 1.0.0 aus der Registry 127.0.0.1:5001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s
+
+volumes:
+  hello-data:

@@ -1,0 +1,37 @@
+# Hello-App hinter Traefik (Lab 9.1)
+# Kopieren nach playground/hello/compose-traefik.yml, Start dort:  docker compose -f compose-traefik.yml up -d
+# Vorher den Stand aus compose.yml stoppen (docker compose down): Port 8080 gehört jetzt dem Traefik-Dashboard.
+services:
+  traefik:
+    image: traefik:v3.8
+    command:
+      - --api.insecure=true                           # Dashboard ohne Anmeldung auf Port 8080 (nur für die lokale Übung)
+      # TODO 1: Docker-Provider einschalten
+      # TODO 2: Container nur veröffentlichen, wenn sie das Label traefik.enable=true tragen
+      # TODO 3: Eingang "web" auf Port 80
+    ports:
+      - 80:80
+      - 8080:8080
+    # TODO 4: Docker-Socket /var/run/docker.sock nur lesend einbinden
+
+  frontend:
+    image: frontend:v2
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - hello-data:/data
+    # TODO 5: Labels: veröffentlichen, Router "app" mit Host(`app.localhost`), Eingang web
+
+  backend:
+    image: backend:v1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s
+    # TODO 6: Labels: veröffentlichen, Router "api" mit Host(`api.app.localhost`), Eingang web
+
+volumes:
+  hello-data:

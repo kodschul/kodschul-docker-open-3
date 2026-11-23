@@ -1,0 +1,35 @@
+# Time-App (Lab 9.2): Traefik, Frontend (nginx), Backend (Flask) und Redis
+# Start im Ordner playground/time-app:  docker compose up -d --build
+services:
+  frontend:
+    build: ./frontend
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.frontend.rule=Host(`localhost`) && PathPrefix(`/`)      # alles unter localhost ...
+      - traefik.http.routers.frontend.entrypoints=web
+
+  backend:
+    build: ./backend
+    depends_on:
+      - redis
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.backend.rule=Host(`localhost`) && PathPrefix(`/api`)    # ... außer /api: längere Regel gewinnt
+      - traefik.http.routers.backend.entrypoints=web
+
+  redis:
+    image: redis:8-alpine                     # Zwischenspeicher; nur im Compose-Netzwerk erreichbar, ohne Traefik-Label
+
+  traefik:
+    image: traefik:v3.8
+    command:
+      - --log.level=DEBUG                     # ausführliche Logs: docker compose logs traefik
+      - --api.insecure=true                   # Dashboard auf Port 8080 ohne Anmeldung (nur lokal)
+      - --providers.docker=true
+      - --providers.docker.exposedByDefault=false
+      - --entryPoints.web.address=:80
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+Dockerfile
+.dockerignore
+# Notizen und Textdateien nicht ins Image
+*.txt

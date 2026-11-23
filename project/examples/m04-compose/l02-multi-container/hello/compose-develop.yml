@@ -1,0 +1,27 @@
+# Entwicklungsmodus: Backend mit Healthcheck, Frontend wartet darauf, Watch baut bei Änderungen neu
+services:
+  frontend:
+    image: frontend:v1
+    build:
+      context: frontend
+      args:
+        - APP_VERSION=1.0.0
+    depends_on:
+      backend:
+        condition: service_healthy          # erst starten, wenn das Backend "healthy" ist
+    ports:
+      - 8080:80
+    develop:
+      watch:
+        - path: ./frontend/frontend.py
+          action: rebuild                   # Datei geändert -> Image neu bauen, Container ersetzen
+
+  backend:
+    image: backend:v1
+    build: backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s                         # alle 10 Sekunden prüfen
+      timeout: 2s                           # Antwort muss nach 2 Sekunden da sein
+      retries: 2                            # nach 2 Fehlschlägen: unhealthy
+      start_period: 3s                      # Startzeit, in der Fehlschläge nicht zählen

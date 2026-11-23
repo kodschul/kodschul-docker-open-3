@@ -1,0 +1,23 @@
+# Fehlerbild 3 (Lab 7.1): Hello-App auf Port 8703
+# Start im Ordner fehler3-netzwerk:  docker compose up -d
+# networks: legt eigene Netzwerke an; ein Dienst ist nur in den Netzwerken, die unter ihm stehen.
+services:
+  frontend:
+    image: frontend:v2                      # Image aus Lab 3.2
+    ports:
+      - 8703:80
+    environment:
+      BACKEND_URL: http://backend:80
+    networks:
+      - front
+    depends_on:
+      - backend
+
+  backend:
+    image: backend:v1                       # Image aus Lab 3.2
+    networks:
+      - back
+
+networks:
+  front:
+  back:

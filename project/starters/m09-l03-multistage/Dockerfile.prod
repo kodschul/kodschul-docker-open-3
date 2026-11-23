@@ -1,0 +1,21 @@
+# Multistage-Dockerfile für die Todo-App (Lab 9.3)
+# Kopieren nach playground/todo-app/app/Dockerfile.prod
+# Bauen im Ordner playground/todo-app:  docker build -f app/Dockerfile.prod -t todo-app:prod app
+
+# Stufe 1 "base": gemeinsame Grundlage, nur die Paketlisten
+FROM node:24-alpine AS base
+WORKDIR /usr/src/app
+COPY package*.json .npmrc ./
+
+# Stufe 2 "builder": alle Pakete inklusive Entwicklungswerkzeuge, dazu der Code
+FROM base AS builder
+RUN npm ci
+COPY . .
+
+# Stufe 3 "production": frisches, schlankes Image
+# TODO 1: neue Stufe "production" auf node:24-alpine beginnen
+# TODO 2: NODE_ENV=production setzen und den Arbeitsordner /usr/src/app wählen
+# TODO 3: package.json, package-lock.json und .npmrc aus der Stufe builder kopieren
+# TODO 4: nur Laufzeitpakete installieren: npm ci --omit=dev && npm cache clean --force
+# TODO 5: server.js und die Ordner config, models, routes, views aus der Stufe builder kopieren
+# TODO 6: als Benutzer node ausführen, Port 3000 dokumentieren, Start mit ["npm", "start"]

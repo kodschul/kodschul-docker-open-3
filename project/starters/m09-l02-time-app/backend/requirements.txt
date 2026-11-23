@@ -1,0 +1,2 @@
+# TODO: die drei Python-Pakete eintragen, die backend.py importiert (je Zeile ein Paket, mit Versionsbereich wie in der Hello-App)
+#   Webframework, CORS-Erweiterung für das Webframework, Redis-Client

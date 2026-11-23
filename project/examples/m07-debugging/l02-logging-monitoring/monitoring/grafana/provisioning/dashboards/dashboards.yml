@@ -1,0 +1,8 @@
+# Grafana lädt alle Dashboards (JSON) aus diesem Ordner im Container
+apiVersion: 1
+providers:
+  - name: kurs
+    folder: Docker-Kurs
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

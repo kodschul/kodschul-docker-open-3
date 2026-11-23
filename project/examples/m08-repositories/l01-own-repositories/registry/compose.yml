@@ -1,0 +1,13 @@
+# Eigene Registry (Lab 8.1): Docker Registry 3 mit Volume, damit Images einen Neustart überleben
+# Start im Ordner registry:  docker compose up -d   ·   Katalog: http://localhost:5001/v2/_catalog
+services:
+  registry:
+    image: registry:3
+    ports:
+      - "5001:5000"                      # auf dem Rechner 5001 (macOS belegt 5000 für AirPlay), im Container 5000
+    volumes:
+      - registry-data:/var/lib/registry  # hier speichert die Registry alle Image-Schichten
+    restart: unless-stopped              # startet nach einem Neustart von Docker wieder mit
+
+volumes:
+  registry-data:                         # von Docker verwaltet; docker compose down -v löscht es samt Images

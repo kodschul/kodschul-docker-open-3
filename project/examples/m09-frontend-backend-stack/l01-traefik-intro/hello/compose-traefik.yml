@@ -1,0 +1,44 @@
+# Hello-App hinter Traefik (Lab 9.1)
+# Start im Ordner playground/hello:  docker compose -f compose-traefik.yml up -d
+# Vorher den Stand aus compose.yml stoppen (docker compose down): Port 8080 gehört jetzt dem Traefik-Dashboard.
+services:
+  traefik:
+    image: traefik:v3.8
+    command:
+      - --api.insecure=true                           # Dashboard ohne Anmeldung auf Port 8080 (nur für die lokale Übung)
+      - --providers.docker=true                       # Container über die Docker-API finden
+      - --providers.docker.exposedByDefault=false     # nur Container mit dem Label traefik.enable=true veröffentlichen
+      - --entryPoints.web.address=:80                 # Eingang "web" für Webverkehr auf Port 80
+    ports:
+      - 80:80                                         # Webverkehr für alle Dienste
+      - 8080:8080                                     # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro  # Docker-Socket nur lesend: Traefik sieht Container und Labels
+
+  frontend:
+    image: frontend:v2                                # aus Lab 4.3; kein ports: mehr, Traefik leitet weiter
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - hello-data:/data
+    labels:
+      - traefik.enable=true                                       # diesen Container veröffentlichen
+      - traefik.http.routers.app.rule=Host(`app.localhost`)       # Router "app": Anfragen an app.localhost
+      - traefik.http.routers.app.entrypoints=web                  # nur über den Eingang "web" (Port 80)
+
+  backend:
+    image: backend:v1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.api.rule=Host(`api.app.localhost`)   # Router "api": Anfragen an api.app.localhost
+      - traefik.http.routers.api.entrypoints=web
+
+volumes:
+  hello-data:                                         # dasselbe Volume wie in compose.yml (Projekt hello)

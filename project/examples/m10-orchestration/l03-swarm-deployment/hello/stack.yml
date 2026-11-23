@@ -1,0 +1,25 @@
+# Hello-App als Swarm-Stack: docker stack deploy -c stack.yml hello
+# Swarm baut keine Images: frontend:v1 und backend:v1 müssen vorhanden sein (Lab 3.2)
+services:
+  frontend:
+    image: frontend:v1
+    ports:
+      - 999:80                              # Routing Mesh: Port 999 auf jedem Node
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1                      # Rolling Update: ein Task nach dem anderen
+        delay: 5s
+      rollback_config:
+        parallelism: 1
+
+  backend:
+    image: backend:v1
+    deploy:
+      replicas: 2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 10s
+      timeout: 2s
+      retries: 2
+      start_period: 3s

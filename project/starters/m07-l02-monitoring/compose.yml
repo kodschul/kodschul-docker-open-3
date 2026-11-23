@@ -1,0 +1,56 @@
+# Monitoring-Stack (Lab 7.2): Prometheus, cAdvisor, Node Exporter, Grafana
+# Start im Ordner monitoring:  docker compose up -d
+# Prometheus http://localhost:9090 · cAdvisor http://localhost:8081 · Node Exporter http://localhost:9100/metrics · Grafana http://localhost:3000
+services:
+  prometheus:
+    image: prom/prometheus:v3.16.0
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro    # Konfiguration: was wird wie oft abgefragt
+    ports:
+      - "9090:9090"
+
+  cadvisor:
+    image: ghcr.io/google/cadvisor:0.61.1                     # ab v0.53 auf ghcr.io, vorher gcr.io/cadvisor/cadvisor
+    privileged: true                                           # liest Kernel-Werte aller Container
+    devices:
+      - /dev/kmsg
+    volumes:
+      - /:/rootfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro           # Docker-API: Namen und Labels der Container
+      - /run/containerd/containerd.sock:/run/containerd/containerd.sock:ro   # containerd: nötig mit containerd Image Store (Standard ab Docker 29 / Docker Desktop)
+      - /sys:/sys:ro                                           # cgroups: CPU- und Speicherwerte
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8081:8080"                                            # Weboberfläche und /metrics auf 8081, im Container 8080
+
+  node-exporter:
+    image: prom/node-exporter:v1.13.1
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    ports:
+      - "9100:9100"
+
+  grafana:
+    image: grafana/grafana:13.3.1
+    environment:
+      # nur für die lokale Übung: Zugriff ohne Anmeldung; nie auf einem Server so betreiben
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro   # Datenquelle und Dashboard-Ordner beim Start anlegen
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro    # Dashboard "Hello-Container"
+      - grafana-data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+
+volumes:
+  grafana-data:

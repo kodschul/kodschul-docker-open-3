@@ -1,0 +1,16 @@
+# Rezeptbuch: App (eigenes Image) und Datenbank (MongoDB) mit Named Volume
+services:
+  recipe-app:
+    build: ./app                            # Image aus app/Dockerfile bauen
+    ports:
+      - 3000:3000
+    depends_on:
+      - recipe-database                     # Datenbank-Container zuerst starten
+
+  recipe-database:
+    image: mongo:8                          # MongoDB 8 (Version 6 ohne Support seit 31.07.2025)
+    volumes:
+      - recipe-data:/data/db                # MongoDB speichert seine Dateien unter /data/db
+
+volumes:
+  recipe-data:                              # Named Volume; docker compose down -v löscht es

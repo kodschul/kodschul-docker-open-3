@@ -1,0 +1,9 @@
+# Kleinste Compose-Datei der Hello-App: beide Images aus den Dockerfiles bauen
+services:
+  frontend:
+    build: frontend                         # Ordner mit Dockerfile (Build-Kontext)
+    ports:
+      - 8080:80
+
+  backend:
+    build: backend                          # kein Port nach außen: nur das Frontend fragt das Backend

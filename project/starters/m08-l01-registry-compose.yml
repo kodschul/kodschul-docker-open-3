@@ -1,0 +1,10 @@
+# Eigene Registry (Lab 8.1) – nach playground/registry/compose.yml kopieren und die TODOs ergänzen
+services:
+  registry:
+    image: registry:3
+    ports:
+      - "5001:5000"                      # auf dem Rechner 5001, im Container 5000
+    # TODO 1: Named Volume "registry-data" auf den Speicherort der Registry im Container einbinden: /var/lib/registry
+    # TODO 2: Neustart-Regel "unless-stopped" setzen
+
+# TODO 3: Volume "registry-data" auf oberster Ebene anlegen

@@ -1,0 +1,6 @@
+# Abhängigkeiten (npm install legt sie neu an)
+node_modules/
+npm-debug.log*
+# Betriebssystem
+.DS_Store
+Thumbs.db

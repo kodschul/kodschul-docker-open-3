@@ -1,0 +1,16 @@
+# Prometheus-Konfiguration (Lab 7.2)
+global:
+  scrape_interval: 15s                  # alle 15 Sekunden jede Quelle abfragen
+
+scrape_configs:
+  - job_name: prometheus                # Prometheus überwacht sich selbst
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: cadvisor                  # Werte je Container (CPU, Speicher, Netzwerk)
+    static_configs:
+      - targets: ['cadvisor:8080']      # Dienstname aus compose.yml und Port im Container
+
+  - job_name: node-exporter             # Werte des Hosts (bei Docker Desktop: der Linux-VM)
+    static_configs:
+      - targets: ['node-exporter:9100']

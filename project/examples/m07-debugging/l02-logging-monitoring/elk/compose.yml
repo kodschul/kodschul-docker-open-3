@@ -1,0 +1,38 @@
+# ELK-Stack als Demo (Lab 7.2): Elasticsearch, Logstash, Kibana
+# Speicherbedarf: etwa 3 GB für Docker; in Docker Desktop unter Settings > Resources mindestens 6 GB einstellen.
+# Start im Ordner elk:  docker compose up -d   ·   Kibana: http://localhost:5601 (Start dauert 1–2 Minuten)
+services:
+  elasticsearch:
+    image: elasticsearch:9.5.5
+    environment:
+      - discovery.type=single-node          # ein Knoten, kein Cluster
+      - xpack.security.enabled=false        # nur für die lokale Demo: ohne Anmeldung und ohne TLS
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m      # Java-Heap begrenzen
+    ports:
+      - "9200:9200"                         # REST-API
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+
+  logstash:
+    image: logstash:9.5.5
+    environment:
+      - LS_JAVA_OPTS=-Xms256m -Xmx256m
+    ports:
+      - "5000:5000"                         # TCP-Eingang für Logzeilen
+      - "12201:12201/udp"                   # GELF-Eingang für den Docker-Logtreiber gelf
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: kibana:9.5.5
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+volumes:
+  es-data:

@@ -1,0 +1,13 @@
+# Zwei Dienste aus fertigen Images, ohne eigenes Dockerfile
+services:
+  web:
+    image: nginx:1.30-alpine
+    ports:
+      - 9000:80                             # Rechner-Port 9000 -> Container-Port 80
+    volumes:
+      - ./web:/usr/share/nginx/html         # Bind Mount: Ordner web/ als Webseite
+
+  extra:
+    image: nginx:1.30-alpine
+    deploy:
+      replicas: 2                           # zwei Container aus demselben Dienst
