@@ -75,7 +75,7 @@ todo-app:prod      9201ea77b7ce        274MB         67.5MB
 
 `DISK USAGE` ist die Größe entpackt auf der Festplatte, `CONTENT SIZE` die komprimierte Größe beim Übertragen (Push/Pull). Das Produktions-Image ist 48 MB kleiner (322 → 274 MB, rund 15 %).
 
-<img src="../../assets/images/m09/multistage-size.png" alt="Terminal: docker images todo-app mit den Tags prod und dev und ihren Größen, darunter nodemon --version im dev-Image mit Versionsnummer und im prod-Image mit dem Fehler Cannot find module" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/multistage-size.png" alt="Terminal: docker images todo-app mit den Tags prod und dev und ihren Größen, darunter nodemon --version im dev-Image mit Versionsnummer und im prod-Image mit dem Fehler Cannot find module" width="620">
 
 _Quelle: eigener Screenshot, Todo-App mit Entwicklungs- und Multistage-Image, 23.11.2026._
 
@@ -113,7 +113,7 @@ Server listening on port 3000
 Mongodb Connected
 ```
 
-<img src="../../assets/images/m09/todo-app-prod.png" alt="Browser mit http://localhost:3000: Todo-App mit Eingabefeld und zwei angelegten Aufgaben" width="520">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/todo-app-prod.png" alt="Browser mit http://localhost:3000: Todo-App mit Eingabefeld und zwei angelegten Aufgaben" width="520">
 
 _Quelle: eigener Screenshot, Todo-App aus dem Multistage-Image, 23.11.2026._
 

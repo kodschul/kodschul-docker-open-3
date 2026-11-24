@@ -80,7 +80,7 @@ curl -s http://localhost:9090/api/v1/targets | grep -o '"health":"[a-z]*"'
 "health":"up"
 ```
 
-<img src="../../assets/images/m07/prometheus-targets.png" alt="Prometheus Target health: cadvisor und node-exporter mit Status UP" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/prometheus-targets.png" alt="Prometheus Target health: cadvisor und node-exporter mit Status UP" width="720">
 
 _Quelle: eigener Screenshot, Monitoring-Stack der Übung, 23.11.2026._
 
@@ -105,7 +105,7 @@ for i in $(seq 1 300); do curl -s http://localhost:8080 > /dev/null; done
 
 Während der Schleife steigt die CPU-Linie von `hello-frontend-1` auf etwa 10 %, die des Backends auf etwa 5 % (jeder Seitenaufruf fragt das Backend ab).
 
-<img src="../../assets/images/m07/grafana-hello-container.png" alt="Grafana-Dashboard Hello-Container mit zwei Lastspitzen im CPU-Diagramm von hello-frontend-1" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/grafana-hello-container.png" alt="Grafana-Dashboard Hello-Container mit zwei Lastspitzen im CPU-Diagramm von hello-frontend-1" width="720">
 
 _Quelle: eigener Screenshot, Hello-App mit Monitoring-Stack, 23.11.2026._
  Da Prometheus alle 15 Sekunden abfragt und `rate` über eine Minute rechnet, erscheint der Ausschlag mit bis zu einer Minute Verzögerung.

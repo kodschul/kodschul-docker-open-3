@@ -111,7 +111,7 @@ docker restart webserver                                          # 4. nginx lie
 
 Für Webseiten wie `index.html` ist kein Neustart nötig; nginx liefert bei jedem Aufruf die aktuelle Datei aus.
 
-<img src="../../assets/images/m02/nginx-geaendert.png" alt="Browser mit der nginx-Startseite, deren Überschrift per docker cp in Hallo aus dem Kurs! geändert wurde" width="520">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/nginx-geaendert.png" alt="Browser mit der nginx-Startseite, deren Überschrift per docker cp in Hallo aus dem Kurs! geändert wurde" width="520">
 
 _Quelle: eigener Screenshot, nginx:1.30-alpine mit per `docker cp` geänderter `index.html`, 23.11.2026._
 
@@ -142,7 +142,7 @@ cd project/playground/hello
 docker run -it --rm -v .:/hello busybox:1.37   # aktueller Ordner erscheint im Container als /hello
 ```
 
-<img src="../../assets/images/m02/bind-mount-test.png" alt="Terminal: test.txt enthält Hallo vom eigenen Rechner; im Busybox-Container mit -v .:/hello wird modified by Docker Container! angehängt; nach exit zeigt cat test.txt auf dem Rechner beide Zeilen" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/bind-mount-test.png" alt="Terminal: test.txt enthält Hallo vom eigenen Rechner; im Busybox-Container mit -v .:/hello wird modified by Docker Container! angehängt; nach exit zeigt cat test.txt auf dem Rechner beide Zeilen" width="560">
 
 _Quelle: eigener Screenshot, Hello-App-Ordner `project/playground/hello`, 23.11.2026._
 

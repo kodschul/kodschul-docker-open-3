@@ -132,11 +132,11 @@ _Quelle: Traefik Labs, Docker-Provider, Routing Configuration (https://doc.traef
 
 Das Dashboard unter `http://localhost:8080` zeigt alle Entrypoints, Router, Services und Middlewares mit ihren Routing-Regeln und ihrem Zustand.
 
-<img src="../../assets/images/m09/traefik-dashboard.png" alt="Traefik-Dashboard v3.8: Entrypoints TRAEFIK :8080 und WEB :80, darunter HTTP-Routers und -Services, alle im Status Success" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/traefik-dashboard.png" alt="Traefik-Dashboard v3.8: Entrypoints TRAEFIK :8080 und WEB :80, darunter HTTP-Routers und -Services, alle im Status Success" width="620">
 
 _Quelle: eigener Screenshot, Traefik-Dashboard mit Hello-App, 23.11.2026._
 
-<img src="../../assets/images/m09/traefik-routers.png" alt="Traefik-Dashboard, Liste HTTP Routers: Host(`api.app.localhost`) und Host(`app.localhost`) am Entrypoint web mit Provider Docker, dazu die internen Router api@internal und dashboard@internal am Entrypoint traefik" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/traefik-routers.png" alt="Traefik-Dashboard, Liste HTTP Routers: Host(`api.app.localhost`) und Host(`app.localhost`) am Entrypoint web mit Provider Docker, dazu die internen Router api@internal und dashboard@internal am Entrypoint traefik" width="720">
 
 _Quelle: eigener Screenshot, Traefik-Dashboard mit Hello-App, 23.11.2026._
 

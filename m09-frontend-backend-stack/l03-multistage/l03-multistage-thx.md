@@ -158,7 +158,7 @@ CMD ["npm", "start"]
 - `npm cache clean --force` löscht den Download-Cache von npm in derselben Schicht.
 - Gebaut wird mit `-f`, weil die Datei nicht `Dockerfile` heißt: `docker build -f app/Dockerfile.prod -t todo-app:prod app`.
 
-<img src="../../assets/images/m09/multistage-size.png" alt="Terminal: docker images todo-app mit den Tags prod und dev und ihren Größen, darunter nodemon --version im dev-Image mit Versionsnummer und im prod-Image mit dem Fehler Cannot find module" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/multistage-size.png" alt="Terminal: docker images todo-app mit den Tags prod und dev und ihren Größen, darunter nodemon --version im dev-Image mit Versionsnummer und im prod-Image mit dem Fehler Cannot find module" width="620">
 
 _Quelle: eigener Screenshot, Todo-App mit Entwicklungs- und Multistage-Image, 23.11.2026._
 

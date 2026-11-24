@@ -116,7 +116,7 @@ docker run -d --name webserver -p 8080:80 nginx:1.30-alpine
 | `--name` | gibt dem Container einen Namen, mit dem alle weiteren Befehle arbeiten |
 | `-p <Rechner>:<Container>` | leitet einen Port vom Host in den Container weiter |
 
-<img src="../../assets/images/m02/nginx-willkommen.png" alt="Browser mit der Startseite von nginx: Überschrift Welcome to nginx! und Hinweistext, dass der Webserver erfolgreich installiert ist" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/nginx-willkommen.png" alt="Browser mit der Startseite von nginx: Überschrift Welcome to nginx! und Hinweistext, dass der Webserver erfolgreich installiert ist" width="560">
 
 _Quelle: eigener Screenshot, nginx:1.30-alpine unter http://localhost:8080, 23.11.2026._
 
@@ -154,7 +154,7 @@ Nach `stop` zeigt `docker ps -a` meist `Exited (0)`, nach `kill` `Exited (137)` 
 
 Gelöscht wird nur der Container, das Image bleibt erhalten. Ein neuer `docker run` startet wieder beim unveränderten Image.
 
-<img src="../../assets/images/m02/docker-ps-a.png" alt="Terminal: zweiter nginx-Container auf Port 8081 scheitert mit port is already allocated, nach rm startet er auf 8082; nach docker stop und docker kill zeigt docker ps -a container2 mit Exited (137), container1 mit Exited (0) und webserver mit Up und Port 8080" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/docker-ps-a.png" alt="Terminal: zweiter nginx-Container auf Port 8081 scheitert mit port is already allocated, nach rm startet er auf 8082; nach docker stop und docker kill zeigt docker ps -a container2 mit Exited (137), container1 mit Exited (0) und webserver mit Up und Port 8080" width="720">
 
 _Quelle: eigener Screenshot, Docker Engine 29.9.3, 23.11.2026._
 

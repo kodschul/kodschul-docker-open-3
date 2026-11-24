@@ -79,7 +79,7 @@ ID             NAME      MODE         REPLICAS   IMAGE               PORTS
 qgdjy3sx1uay   web       replicated   10/10      nginx:1.30-alpine   *:8001->80/tcp
 ```
 
-<img src="../../assets/images/m10/service-ps-web.png" alt="Terminal: docker service ps web mit zehn Tasks web.1 bis web.10 auf dem Node docker-desktop, alle im Zustand Running" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m10/service-ps-web.png" alt="Terminal: docker service ps web mit zehn Tasks web.1 bis web.10 auf dem Node docker-desktop, alle im Zustand Running" width="720">
 
 _Quelle: eigener Screenshot, Swarm-Service web mit zehn Tasks, 23.11.2026._
 

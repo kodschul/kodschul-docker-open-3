@@ -113,7 +113,7 @@ docker pull 127.0.0.1:5001/frontend:v1                          # herunterladen,
 - Die Kurs-Registry nutzt HTTP ohne Verschlüsselung und ohne Anmeldung. Docker erlaubt das ohne weitere Einstellung nur für Adressen im Bereich `127.0.0.0/8`; im Firmennetz gehören TLS und Benutzerverwaltung dazu ([dockerd: insecure registries](https://docs.docker.com/reference/cli/dockerd/#insecure-registries), abgerufen am 23.11.2026).
 - Daten der Registry liegen in der Container-Schicht und sind mit `docker rm` weg. Dauerhaft speichern lassen sie sich mit einem Volume (Lab 4.3).
 
-<img src="../../assets/images/m03/registry-push-catalog.png" alt="Terminal: docker tag und docker push von frontend:v1 nach 127.0.0.1:5001, danach Katalog mit frontend und recipe-page und Tag-Liste von recipe-page" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/registry-push-catalog.png" alt="Terminal: docker tag und docker push von frontend:v1 nach 127.0.0.1:5001, danach Katalog mit frontend und recipe-page und Tag-Liste von recipe-page" width="720">
 
 _Quelle: eigener Screenshot, Registry `registry:3` auf Port 5001, 23.11.2026._
 

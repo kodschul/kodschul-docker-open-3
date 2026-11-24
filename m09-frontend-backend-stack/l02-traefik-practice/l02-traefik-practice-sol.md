@@ -111,7 +111,7 @@ time-app-traefik-1    traefik:v3.8         "/entrypoint.sh --lo…"   traefik   
 
 Ohne `image:` benennt Compose die gebauten Images `<Projekt>-<Dienst>`, hier `time-app-backend` und `time-app-frontend`.
 
-<img src="../../assets/images/m09/time-app.png" alt="Browser mit http://localhost: Time-App mit den Knöpfen Get current time und Get last time, darunter die Antworten Current time und Last time mit Datum und Uhrzeit" width="520">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/time-app.png" alt="Browser mit http://localhost: Time-App mit den Knöpfen Get current time und Get last time, darunter die Antworten Current time und Last time mit Datum und Uhrzeit" width="520">
 
 _Quelle: eigener Screenshot, Time-App hinter Traefik, 23.11.2026._
 

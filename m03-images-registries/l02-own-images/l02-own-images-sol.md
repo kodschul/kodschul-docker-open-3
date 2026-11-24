@@ -190,7 +190,7 @@ weather:1.0          5e6da34a25a7       73.9MB         17.4MB
 
 Die Liste enthält weitere Images aus früheren Labs. `weather:1.0` und `pizza:1.0` sind praktisch so groß wie `python:3.13-alpine`: Sie fügen nur ein kleines Skript als Schicht hinzu. `U` bei `frontend:v2` zeigt, dass der Container `hello-frontend` dieses Image nutzt. `frontend` und `backend` enthalten zusätzlich `curl`, Flask und `requests`.
 
-<img src="../../assets/images/m03/hello-frontend-v2.png" alt="Browser auf localhost:8080: gelbe Seite Hello World 2.0.0 mit Container-ID und IP des Frontends, Hinweis Backend nicht erreichbar und Zähler der Aufrufe" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/hello-frontend-v2.png" alt="Browser auf localhost:8080: gelbe Seite Hello World 2.0.0 mit Container-ID und IP des Frontends, Hinweis Backend nicht erreichbar und Zähler der Aufrufe" width="620">
 
 _Quelle: eigener Screenshot, Hello-App `frontend:v2`, 23.11.2026._
 

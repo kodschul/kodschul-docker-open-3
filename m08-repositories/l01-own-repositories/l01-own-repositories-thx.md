@@ -135,7 +135,7 @@ curl -s http://localhost:5001/v2/frontend/tags/list    # Tags eines Repositorys
 
 `docker push --all-tags 127.0.0.1:5001/frontend` lädt alle lokalen Tags dieses Repositorys in einem Schritt hoch. Gleiche Digests zeigen, dass `2.0.0` und `latest` dasselbe Image sind; nach einem Neustart der Registry ist der Katalog dank Volume unverändert:
 
-<img src="../../assets/images/m08/registry-katalog.png" alt="Terminal: docker push --all-tags mit gleichen Digests für 2.0.0 und latest, nach dem Neustart listet der Katalog backend und frontend mit den Tags 1.0.0, 2.0.0, latest" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m08/registry-katalog.png" alt="Terminal: docker push --all-tags mit gleichen Digests für 2.0.0 und latest, nach dem Neustart listet der Katalog backend und frontend mit den Tags 1.0.0, 2.0.0, latest" width="720">
 
 _Quelle: eigener Screenshot, Hello-Images in der eigenen Registry, 23.11.2026._ Die Registry läuft ohne Anmeldung und ohne HTTPS; Docker erlaubt das nur für Adressen auf dem eigenen Rechner (`localhost`, `127.0.0.1`). Auf einem Server gehören TLS und Anmeldung dazu.
 

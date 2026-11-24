@@ -305,7 +305,7 @@ playground/hello/
 
 Das Frontend fragt bei jedem Aufruf `http://backend:80`. Läuft es allein, zeigt es „Backend nicht erreichbar (http://backend:80): ConnectionError". Das ist erwartet: Zwei Container gemeinsam starten und verbinden ist Thema von Modul 4. Die Zeile „Aufrufe in access.log" zählt die Seitenaufrufe in einer Datei im Container (dauerhaft gespeichert ab Lab 4.3).
 
-<img src="../../assets/images/m03/hello-frontend-v2.png" alt="Browser auf localhost:8080: gelbe Seite Hello World 2.0.0 mit Container-ID und IP des Frontends, Hinweis Backend nicht erreichbar und Zähler der Aufrufe" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/hello-frontend-v2.png" alt="Browser auf localhost:8080: gelbe Seite Hello World 2.0.0 mit Container-ID und IP des Frontends, Hinweis Backend nicht erreichbar und Zähler der Aufrufe" width="620">
 
 _Quelle: eigener Screenshot, Hello-App `frontend:v2`, 23.11.2026._
 

@@ -106,7 +106,7 @@ Dass nginx in der VM tatsächlich auf Port 80 lauscht, zeigt ein zweiter Contain
 docker run --rm --network host busybox:1.37 wget -qO- http://localhost:80   # liefert die nginx-Startseite
 ```
 
-<img src="../../assets/images/m05/host-network-desktop.png" alt="Terminal unter Docker Desktop: curl auf localhost:80 scheitert mit Connection refused, wget aus einem zweiten Host-Netzwerk-Container liefert die nginx-Startseite" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m05/host-network-desktop.png" alt="Terminal unter Docker Desktop: curl auf localhost:80 scheitert mit Connection refused, wget aus einem zweiten Host-Netzwerk-Container liefert die nginx-Startseite" width="640">
 
 _Quelle: eigener Screenshot, Docker Desktop, 23.11.2026._
 

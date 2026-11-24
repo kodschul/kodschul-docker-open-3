@@ -41,7 +41,7 @@ CONTAINER ID   IMAGE               COMMAND                  CREATED         STAT
 0aaaf24865e4   nginx:1.30-alpine   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   webserver
 ```
 
-<img src="../../assets/images/m02/nginx-willkommen.png" alt="Browser mit der Startseite von nginx: Welcome to nginx!" width="520">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/nginx-willkommen.png" alt="Browser mit der Startseite von nginx: Welcome to nginx!" width="520">
 
 _Quelle: eigener Screenshot, nginx:1.30-alpine unter http://localhost:8080, 23.11.2026._
 
@@ -96,7 +96,7 @@ CONTAINER ID   IMAGE               COMMAND                  CREATED        STATU
 0aaaf24865e4   nginx:1.30-alpine   "/docker-entrypoint.…"   1 minute ago   Up 1 minute   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   webserver
 ```
 
-<img src="../../assets/images/m02/docker-ps-a.png" alt="Terminal: Port-Konflikt für container2, danach docker ps -a mit container2 Exited (137), container1 Exited (0) und webserver Up auf Port 8080" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/docker-ps-a.png" alt="Terminal: Port-Konflikt für container2, danach docker ps -a mit container2 Exited (137), container1 Exited (0) und webserver Up auf Port 8080" width="720">
 
 _Quelle: eigener Screenshot, Docker Engine 29.9.3, 23.11.2026._
 

@@ -78,7 +78,7 @@ docker run -d --name frontend --network hello-net -p 8080:80 frontend:v2      # 
 - `docker port backend` gibt nichts aus: Das Backend hat keinen veröffentlichten Port.
 - Weniger offene Ports bedeuten weniger Angriffsfläche (vertieft in Lab 6.1).
 
-<img src="../../assets/images/m05/hello-net-page.png" alt="Browser: Hello World 2.0.0 mit Frontend-IP und Backend-Antwort aus dem Netzwerk hello-net, gestartet ohne Compose" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m05/hello-net-page.png" alt="Browser: Hello World 2.0.0 mit Frontend-IP und Backend-Antwort aus dem Netzwerk hello-net, gestartet ohne Compose" width="560">
 
 _Quelle: eigener Screenshot, Hello-App, 23.11.2026._
 

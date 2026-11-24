@@ -73,7 +73,7 @@ docker logs -t --tail 5 my-web-container      # mit Zeitstempel je Zeile
 
 In einem Compose-Projekt gibt es dieselben Befehle je Dienst: `docker compose logs frontend`, `docker compose logs -f --tail 20`. Wichtig: `docker ps` und `docker compose ps` zeigen nur laufende Container; beendete Container und ihren Exit-Code zeigen erst `docker ps -a` und `docker compose ps -a`.
 
-<img src="../../assets/images/m07/fehler-cmd-logs.png" alt="Terminal: docker compose ps -a zeigt den Frontend-Container mit Status Exited (2), docker compose logs frontend zeigt python: can't open file '/app/fronted.py'" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/fehler-cmd-logs.png" alt="Terminal: docker compose ps -a zeigt den Frontend-Container mit Status Exited (2), docker compose logs frontend zeigt python: can't open file '/app/fronted.py'" width="720">
 
 _Quelle: eigener Screenshot, Hello-App (Fehlerbild 1), 23.11.2026._
 
@@ -236,7 +236,7 @@ docker inspect -f 'status={{.State.Status}} exit={{.State.ExitCode}} oom={{.Stat
 status=exited exit=137 oom=true
 ```
 
-<img src="../../assets/images/m07/fehler-speicher-oom.png" alt="Terminal: docker compose ps -a zeigt das Backend mit Exited (137), docker inspect zeigt oom=true und eine Speichergrenze von 8388608 Bytes" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/fehler-speicher-oom.png" alt="Terminal: docker compose ps -a zeigt das Backend mit Exited (137), docker inspect zeigt oom=true und eine Speichergrenze von 8388608 Bytes" width="720">
 
 _Quelle: eigener Screenshot, Hello-App (Fehlerbild 4), 23.11.2026._
 

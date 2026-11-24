@@ -69,7 +69,7 @@ demo-network 172.20.0.3
 
 `connect` wirkt sofort, ohne Neustart. `container2` hängt jetzt in zwei Netzwerken und hat in jedem eine eigene IP.
 
-<img src="../../assets/images/m05/ping-fail-success.png" alt="Terminal: erster Ping von container1 auf container2 mit bad address, nach docker network connect drei erfolgreiche Antworten" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m05/ping-fail-success.png" alt="Terminal: erster Ping von container1 auf container2 mit bad address, nach docker network connect drei erfolgreiche Antworten" width="640">
 
 _Quelle: eigener Screenshot, Docker Desktop, 23.11.2026._
 

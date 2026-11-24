@@ -175,7 +175,7 @@ docker network inspect hello_default     # ganze Beschreibung als JSON
 ]
 ```
 
-<img src="../../assets/images/m05/network-inspect.png" alt="Terminal: docker network ls mit hello_default und docker network inspect hello_default, gefiltert auf die Container hello-frontend-1 und hello-backend-1 mit ihren IP-Adressen" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m05/network-inspect.png" alt="Terminal: docker network ls mit hello_default und docker network inspect hello_default, gefiltert auf die Container hello-frontend-1 und hello-backend-1 mit ihren IP-Adressen" width="640">
 
 _Quelle: eigener Screenshot, Hello-App, 23.11.2026._
 

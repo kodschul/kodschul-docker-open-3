@@ -16,7 +16,7 @@ python:3.13-alpine   9ef1a599f863       74.6MB           18MB
 ubuntu:24.04         562111b88caa        141MB         30.9MB
 ```
 
-<img src="../../assets/images/m03/docker-images-sizes.png" alt="Terminal: docker images mit alpine:3.24 (4,28 MB), python:3.13-alpine (18 MB) und ubuntu:24.04 (30,9 MB) in der Spalte CONTENT SIZE" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/docker-images-sizes.png" alt="Terminal: docker images mit alpine:3.24 (4,28 MB), python:3.13-alpine (18 MB) und ubuntu:24.04 (30,9 MB) in der Spalte CONTENT SIZE" width="720">
 
 _Quelle: eigener Screenshot, Lab 3.1, 23.11.2026._
 

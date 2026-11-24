@@ -140,7 +140,7 @@ docker history python:3.13-alpine      # Bauschritte und Schichten eines Images
 docker system df                       # Speicherverbrauch von Images, Containern, Volumes, Build-Cache
 ```
 
-<img src="../../assets/images/m03/docker-images-sizes.png" alt="Terminal: docker images zeigt ubuntu:24.04, alpine:3.24 und python:3.13-alpine mit den Spalten DISK USAGE und CONTENT SIZE" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/docker-images-sizes.png" alt="Terminal: docker images zeigt ubuntu:24.04, alpine:3.24 und python:3.13-alpine mit den Spalten DISK USAGE und CONTENT SIZE" width="720">
 
 _Quelle: eigener Screenshot, Lab 3.1, 23.11.2026._
 
@@ -156,7 +156,7 @@ _Quelle: eigener Screenshot, Lab 3.1, 23.11.2026._
 
 `docker history` zeigt die Bauschritte von oben (zuletzt) nach unten (Basis):
 
-<img src="../../assets/images/m03/docker-history-python.png" alt="Terminal: docker history python:3.13-alpine mit den Spalten IMAGE, CREATED, CREATED BY, SIZE und COMMENT; Schritte mit 0B setzen nur Einstellungen" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/docker-history-python.png" alt="Terminal: docker history python:3.13-alpine mit den Spalten IMAGE, CREATED, CREATED BY, SIZE und COMMENT; Schritte mit 0B setzen nur Einstellungen" width="720">
 
 _Quelle: eigener Screenshot, Lab 3.1, 23.11.2026._
 

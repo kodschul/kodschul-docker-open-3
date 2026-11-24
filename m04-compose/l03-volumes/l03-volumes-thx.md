@@ -195,7 +195,7 @@ volumes:
   hello-data:
 ```
 
-<img src="../../assets/images/m04/recipe-book-curl.png" alt="Terminal: curl POST legt das Rezept Spaghetti Carbonara an und erhält es mit _id zurück; curl GET nach docker compose down und up listet das Rezept weiterhin" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m04/recipe-book-curl.png" alt="Terminal: curl POST legt das Rezept Spaghetti Carbonara an und erhält es mit _id zurück; curl GET nach docker compose down und up listet das Rezept weiterhin" width="720">
 
 _Quelle: eigener Screenshot, Rezeptbuch mit Named Volume, 23.11.2026._
 

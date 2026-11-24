@@ -83,7 +83,7 @@ Nur Traefik ist von außen erreichbar. `80/tcp` ohne Pfeil bedeutet: Port im Con
 
 ## Aufgabe 5: Im Browser und Dashboard prüfen
 
-<img src="../../assets/images/m09/hello-app-localhost.png" alt="Browser mit http://app.localhost: gelbe Seite Hello World 2.0.0, Frontend-Container-ID mit IP 172.18.0.4, Backend-Antwort mit Container-ID, IP 172.18.0.3 und Uhrzeit, Zeile Aufrufe in access.log" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/hello-app-localhost.png" alt="Browser mit http://app.localhost: gelbe Seite Hello World 2.0.0, Frontend-Container-ID mit IP 172.18.0.4, Backend-Antwort mit Container-ID, IP 172.18.0.3 und Uhrzeit, Zeile Aufrufe in access.log" width="560">
 
 _Quelle: eigener Screenshot, Hello-App hinter Traefik, 23.11.2026._
 
@@ -95,7 +95,7 @@ curl http://api.app.localhost
 {"hostname":"85c026b73178","ip":["172.18.0.3"],"now":"22:32:15"}
 ```
 
-<img src="../../assets/images/m09/hello-api-localhost.png" alt="Browser mit http://api.app.localhost: JSON-Antwort des Hello-Backends mit hostname, ip und now" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m09/hello-api-localhost.png" alt="Browser mit http://api.app.localhost: JSON-Antwort des Hello-Backends mit hostname, ip und now" width="560">
 
 _Quelle: eigener Screenshot, Hello-Backend hinter Traefik, 23.11.2026._
 

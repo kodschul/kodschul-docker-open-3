@@ -107,7 +107,7 @@ _Quelle: Trivy Docs, „Overview" (https://trivy.dev/docs/latest/guide/), Aqua S
 
 Vergleich der Hello-Images mit einem veralteten Basisimage (Trivy 0.76.2, 23.11.2026):
 
-<img src="../../assets/images/m06/trivy-compare.png" alt="Terminal: Trivy findet in frontend:v1 auf Alpine 3.24 11 Lücken ohne HIGH und CRITICAL, in python:3.9-alpine auf Alpine 3.22 113 Lücken mit 28 HIGH und 2 CRITICAL" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m06/trivy-compare.png" alt="Terminal: Trivy findet in frontend:v1 auf Alpine 3.24 11 Lücken ohne HIGH und CRITICAL, in python:3.9-alpine auf Alpine 3.22 113 Lücken mit 28 HIGH und 2 CRITICAL" width="640">
 
 _Quelle: eigener Screenshot, Hello-App, 23.11.2026._
 

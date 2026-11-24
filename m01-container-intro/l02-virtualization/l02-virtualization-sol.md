@@ -1,6 +1,6 @@
 # Lab 1.2 – Lösung: Vergleich zur Virtualisierung
 
-<img src="../../assets/images/m01/kernel-und-startzeit.png" alt="Terminal: Alpine- und Ubuntu-Container zeigen beide die Kernel-Version 7.0.14-linuxkit, aber unterschiedliche Distributionsnamen; time docker run --rm alpine:3.24 echo hallo braucht real 0,223 Sekunden" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m01/kernel-und-startzeit.png" alt="Terminal: Alpine- und Ubuntu-Container zeigen beide die Kernel-Version 7.0.14-linuxkit, aber unterschiedliche Distributionsnamen; time docker run --rm alpine:3.24 echo hallo braucht real 0,223 Sekunden" width="620">
 
 _Quelle: eigener Screenshot, Docker Desktop 4.99 auf macOS, 23.11.2026._
 

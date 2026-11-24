@@ -137,7 +137,7 @@ Container sind schlanker und brauchen weniger Arbeitsspeicher und CPU als virtue
 
 Der Befehl `docker run hello-world` ist der klassische Test einer Docker-Installation. Er startet einen Container aus dem winzigen Image `hello-world` von Docker Hub; der Container gibt einen Begrüßungstext aus und endet sofort.
 
-<img src="../../assets/images/m01/hello-world.png" alt="Terminal mit docker run hello-world: Docker findet das Image nicht lokal, lädt es von Docker Hub und gibt Hello from Docker! mit vier nummerierten Schritten aus" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m01/hello-world.png" alt="Terminal mit docker run hello-world: Docker findet das Image nicht lokal, lädt es von Docker Hub und gibt Hello from Docker! mit vier nummerierten Schritten aus" width="620">
 
 _Quelle: eigener Screenshot, Docker Desktop 4.99 mit Engine 29.9.3, 23.11.2026._
 

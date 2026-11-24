@@ -291,7 +291,7 @@ scrape_configs:
 
 Ältere Beispiele tragen hier den Port der Anwendung (`java-app:8080`) ein; die Metriken des JMX Exporters liegen aber auf dem Agenten-Port. Prometheus zeigt unter `http://localhost:9090` im Menü **Status > Target health**, ob jedes Ziel erreichbar ist (`UP`).
 
-<img src="../../assets/images/m07/prometheus-targets.png" alt="Prometheus, Status > Target health: Jobs cadvisor und node-exporter mit Endpoint, Labels, letzter Abfrage und Status UP" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/prometheus-targets.png" alt="Prometheus, Status > Target health: Jobs cadvisor und node-exporter mit Endpoint, Labels, letzter Abfrage und Status UP" width="720">
 
 _Quelle: eigener Screenshot, Monitoring-Stack der Übung, 23.11.2026._
 
@@ -397,7 +397,7 @@ _Quelle: Grafana Labs, Dashboards overview (https://grafana.com/docs/grafana/lat
 
 Das Dashboard „Hello-Container" der Übung zeigt CPU und Speicher je Hello-Container (oben) und die Werte des Hosts (unten); der Ausschlag entsteht durch eine Schleife mit Aufrufen der Hello-App:
 
-<img src="../../assets/images/m07/grafana-hello-container.png" alt="Grafana-Dashboard Hello-Container: CPU und Speicher für hello-frontend-1 und hello-backend-1, darunter verfügbarer Arbeitsspeicher und CPU-Auslastung des Hosts" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m07/grafana-hello-container.png" alt="Grafana-Dashboard Hello-Container: CPU und Speicher für hello-frontend-1 und hello-backend-1, darunter verfügbarer Arbeitsspeicher und CPU-Auslastung des Hosts" width="720">
 
 _Quelle: eigener Screenshot, Hello-App mit Monitoring-Stack, 23.11.2026._
 

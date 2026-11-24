@@ -118,7 +118,7 @@ docker run --name oom-test --memory 32m --memory-swap 32m python:3.13-alpine \
 docker inspect oom-test --format '{{.State.OOMKilled}} {{.State.ExitCode}}'   # true 137
 ```
 
-<img src="../../assets/images/m06/oom-killed.png" alt="Terminal: Container oom-test mit 32 MB Speichergrenze endet mit Exit-Code 137, docker ps -a zeigt Exited (137), docker inspect zeigt OOMKilled true" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m06/oom-killed.png" alt="Terminal: Container oom-test mit 32 MB Speichergrenze endet mit Exit-Code 137, docker ps -a zeigt Exited (137), docker inspect zeigt OOMKilled true" width="640">
 
 _Quelle: eigener Screenshot, Docker Desktop, 23.11.2026._
 

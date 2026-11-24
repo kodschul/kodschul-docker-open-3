@@ -47,7 +47,7 @@ bin    dev    etc    home   lib    lib64  proc   root   sys    tmp    usr    var
 / # exit
 ```
 
-<img src="../../assets/images/m02/bin-geloescht.png" alt="Terminal: im Container kaputt nach rm -rf /bin melden ls und uptime not found; docker start -ai kaputt scheitert mit executable file not found; ein neuer Busybox-Container listet /bin wieder" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/bin-geloescht.png" alt="Terminal: im Container kaputt nach rm -rf /bin melden ls und uptime not found; docker start -ai kaputt scheitert mit executable file not found; ein neuer Busybox-Container listet /bin wieder" width="720">
 
 _Quelle: eigener Screenshot, busybox:1.37, 23.11.2026._
 
@@ -78,7 +78,7 @@ Hallo vom eigenen Rechner
 modified by Docker Container!
 ```
 
-<img src="../../assets/images/m02/bind-mount-test.png" alt="Terminal: test.txt vor und nach dem Busybox-Container mit Bind Mount; danach mit der Zeile modified by Docker Container!" width="560">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/bind-mount-test.png" alt="Terminal: test.txt vor und nach dem Busybox-Container mit Bind Mount; danach mit der Zeile modified by Docker Container!" width="560">
 
 _Quelle: eigener Screenshot, Hello-App-Ordner `project/playground/hello`, 23.11.2026._
 
@@ -110,7 +110,7 @@ docker logs --tail 3 webserver
 …
 ```
 
-<img src="../../assets/images/m02/nginx-geaendert.png" alt="Browser: nginx-Startseite mit der Überschrift Hallo aus dem Kurs!" width="520">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m02/nginx-geaendert.png" alt="Browser: nginx-Startseite mit der Überschrift Hallo aus dem Kurs!" width="520">
 
 _Quelle: eigener Screenshot, nginx:1.30-alpine mit geänderter `index.html`, 23.11.2026._
 

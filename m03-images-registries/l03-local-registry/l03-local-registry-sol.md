@@ -24,7 +24,7 @@ docker build -t recipe-page:1.0.0 .
 docker run -d --name recipe-page -p 8081:80 recipe-page:1.0.0
 ```
 
-<img src="../../assets/images/m03/recipe-page.png" alt="Rezeptseite im Browser: Kaiserschmarrn mit Zutatenliste und nummerierten Zubereitungsschritten" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/recipe-page.png" alt="Rezeptseite im Browser: Kaiserschmarrn mit Zutatenliste und nummerierten Zubereitungsschritten" width="620">
 
 _Quelle: eigener Screenshot, `index.html` der Rezeptseite mit Beispielrezept, 23.11.2026._
 
@@ -90,7 +90,7 @@ registry:3                         82f6ff4a7f98       82.4MB         19.4MB   U
 | `http://localhost:5001/v2/frontend/tags/list` | `{"name":"frontend","tags":["v1"]}` |
 | `http://localhost:5001/v2/recipe-page/tags/list` | `{"name":"recipe-page","tags":["1.0.0"]}` |
 
-<img src="../../assets/images/m03/registry-push-catalog.png" alt="Terminal: docker tag und docker push von frontend:v1 nach 127.0.0.1:5001, danach Katalog mit frontend und recipe-page und Tag-Liste von recipe-page" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m03/registry-push-catalog.png" alt="Terminal: docker tag und docker push von frontend:v1 nach 127.0.0.1:5001, danach Katalog mit frontend und recipe-page und Tag-Liste von recipe-page" width="720">
 
 _Quelle: eigener Screenshot, Registry `registry:3` auf Port 5001, 23.11.2026._
 

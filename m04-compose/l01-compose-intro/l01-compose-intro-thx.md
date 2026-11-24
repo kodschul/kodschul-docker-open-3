@@ -218,7 +218,7 @@ flowchart LR
 
 Container heißen `<projekt>-<dienst>-<nummer>`, z. B. `hello-frontend-1`. Bei mehreren Replikas zählt die Nummer hoch.
 
-<img src="../../assets/images/m04/hello-compose.png" alt="Hello-App im Browser auf localhost:8080 nach docker compose up: Überschrift Hello World 0.0.0, Frontend-Container-ID und IP, Backend-Antwort mit Container-ID, IP und Uhrzeit, Aufrufe in access.log" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m04/hello-compose.png" alt="Hello-App im Browser auf localhost:8080 nach docker compose up: Überschrift Hello World 0.0.0, Frontend-Container-ID und IP, Backend-Antwort mit Container-ID, IP und Uhrzeit, Aufrufe in access.log" width="620">
 
 _Quelle: eigener Screenshot, Hello-App mit compose-minimal.yml, 23.11.2026._
 

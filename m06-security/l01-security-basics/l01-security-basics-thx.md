@@ -82,7 +82,7 @@ docker compose top frontend              # Prozesse des Dienstes mit Benutzer (S
 - Schutz: Images mit eigenem Benutzer bauen (`USER`, Lab 6.3), nur nötige Ordner einbinden, Ordner wenn möglich schreibgeschützt (`-v ./web:/usr/share/nginx/html:ro`).
 - Die Option `--privileged` hebt fast alle Schutzmechanismen auf; sie gehört nicht in normale Anwendungen.
 
-<img src="../../assets/images/m06/root-and-host-mount.png" alt="Terminal: whoami im Hello-Frontend zeigt root; ein Alpine-Container mit -v /:/host listet das Wurzelverzeichnis des Hosts und legt dort als root eine Datei an" width="640">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m06/root-and-host-mount.png" alt="Terminal: whoami im Hello-Frontend zeigt root; ein Alpine-Container mit -v /:/host listet das Wurzelverzeichnis des Hosts und legt dort als root eine Datei an" width="640">
 
 _Quelle: eigener Screenshot, Hello-App, 23.11.2026._
 

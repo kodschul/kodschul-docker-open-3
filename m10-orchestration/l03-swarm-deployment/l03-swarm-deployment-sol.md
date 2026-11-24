@@ -90,11 +90,11 @@ verify: Service hello_frontend converged
 
 Das Update dauert etwa eine Minute: Je Task wartet Swarm bis zu 10 s, bis der alte Container beendet ist, startet den neuen, prüft ihn 5 s und macht 5 s Pause (`delay`). In dieser Zeit liefern die Aufrufe gemischt beide Versionen:
 
-<img src="../../assets/images/m10/rolling-update-curl.png" alt="Terminal: curl-Schleife gegen localhost:999 während des Rolling Updates, Antworten wechseln zwischen Hello World 1.0.0 und Hello World 2.0.0" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m10/rolling-update-curl.png" alt="Terminal: curl-Schleife gegen localhost:999 während des Rolling Updates, Antworten wechseln zwischen Hello World 1.0.0 und Hello World 2.0.0" width="620">
 
 _Quelle: eigener Screenshot, Hello-App als Swarm-Stack während des Rolling Updates, 23.11.2026._
 
-<img src="../../assets/images/m10/hello-v1-swarm.png" alt="Browser mit http://localhost:999: gelbe Seite Hello World 1.0.0 mit Frontend-Container-ID und IP im Stack-Netzwerk" width="420"> <img src="../../assets/images/m10/hello-v2-swarm.png" alt="Browser mit http://localhost:999: gelbe Seite Hello World 2.0.0 mit Frontend-Container-ID und IP im Stack-Netzwerk" width="420">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m10/hello-v1-swarm.png" alt="Browser mit http://localhost:999: gelbe Seite Hello World 1.0.0 mit Frontend-Container-ID und IP im Stack-Netzwerk" width="420"> <img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m10/hello-v2-swarm.png" alt="Browser mit http://localhost:999: gelbe Seite Hello World 2.0.0 mit Frontend-Container-ID und IP im Stack-Netzwerk" width="420">
 
 _Quelle: eigene Screenshots, Hello-App v1 und v2 im Swarm, 23.11.2026._
 

@@ -75,7 +75,7 @@ Mehrere Kopien können nicht denselben Rechner-Port belegen. Deshalb steht bei s
 
 Docker Compose ist ideal für lokale und Entwicklungsumgebungen auf einem Rechner. Für Produktionsumgebungen mit mehreren Servern sind Orchestrierer wie Docker Swarm (Modul 10) oder Kubernetes besser geeignet.
 
-<img src="../../assets/images/m04/compose-ps-replicas.png" alt="Terminal: docker compose ps zeigt zehn Container hello-frontend-1 bis hello-frontend-10 mit je eigenem zufälligem Rechner-Port und einen Container hello-backend-1 mit Status healthy" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m04/compose-ps-replicas.png" alt="Terminal: docker compose ps zeigt zehn Container hello-frontend-1 bis hello-frontend-10 mit je eigenem zufälligem Rechner-Port und einen Container hello-backend-1 mit Status healthy" width="720">
 
 _Quelle: eigener Screenshot, Hello-App mit compose.yml, 23.11.2026._
 
@@ -139,7 +139,7 @@ _Quelle: docker/multi-container-app, `compose.yaml` (https://github.com/docker/m
 
 MongoDB 6.0 hat seit dem 31.07.2025 keinen Support mehr. Aktuell sind MongoDB 8.0 und 8.3 (Support bis 31.10.2029) sowie seit 09/2026 MongoDB 9.0. Für das Beispiel `image: mongo:8` eintragen (Quelle: MongoDB Lifecycle Schedules, https://www.mongodb.com/legal/support-policy/lifecycles, abgerufen am 23.11.2026).
 
-<img src="../../assets/images/m04/todo-app.png" alt="Todo-App aus docker/multi-container-app im Browser auf localhost:3000 mit Eingabefeld und Liste von Aufgaben" width="620">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m04/todo-app.png" alt="Todo-App aus docker/multi-container-app im Browser auf localhost:3000 mit Eingabefeld und Liste von Aufgaben" width="620">
 
 _Quelle: eigener Screenshot, docker/multi-container-app mit mongo:8, 23.11.2026._
 
@@ -186,7 +186,7 @@ Die lange Form von `depends_on` wartet auf diesen Status:
 | `service_healthy` | der Healthcheck des Backends erfolgreich war |
 | `service_completed_successfully` | der Backend-Container fertig ist und mit Exit-Code 0 endete (z. B. ein Einrichtungsschritt) |
 
-<img src="../../assets/images/m04/compose-ps-healthy.png" alt="Terminal: docker compose up -d --build meldet Healthy für hello-backend-1 und danach Started für hello-frontend-1; docker compose ps zeigt das Backend mit Status healthy und ein Frontend, das einige Sekunden später gestartet ist" width="720">
+<img src="https://raw.githubusercontent.com/kodschul/kodschul-docker-open-3/3270d87fdfd7dfc684128aa2c830caaa21e0fd9d/assets/images/m04/compose-ps-healthy.png" alt="Terminal: docker compose up -d --build meldet Healthy für hello-backend-1 und danach Started für hello-frontend-1; docker compose ps zeigt das Backend mit Status healthy und ein Frontend, das einige Sekunden später gestartet ist" width="720">
 
 _Quelle: eigener Screenshot, Hello-App mit compose-develop.yml, 23.11.2026._
 
